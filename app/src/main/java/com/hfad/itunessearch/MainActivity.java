@@ -8,6 +8,7 @@ import android.util.Log;
 import java.util.List;
 
 import retrofit2.Call;
+import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -30,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         MusicService service = retrofit.create(MusicService.class);
         Call<MusicResponse> musicResponseCall = service.searchByArtists("Khalid");
 
-        musicResponseCall.enqueue(new Callback<MusicResponse()
+        musicResponseCall.enqueue(new Callback<MusicResponse>()
         {
             @Override
             public void onResponse(Call<MusicResponse> call, Response<MusicResponse> response)
