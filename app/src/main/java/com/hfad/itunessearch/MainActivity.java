@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
                 .build();
 
         MusicService service = retrofit.create(MusicService.class);
-        Call<MusicResponse> musicResponseCall = service.searchByArtists("Khalid");
+        Call<MusicResponse> musicResponseCall = service.searchByArtists("Jonas+Brothers");
 
         musicResponseCall.enqueue(new Callback<MusicResponse>()
         {
