@@ -4,6 +4,7 @@ import android.os.ResultReceiver;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.EditText;
 
 import java.util.List;
 
@@ -14,13 +15,21 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
+    private EditText artist;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         searchMusic();
+        wireWidgets();
     }
+
+    private void wireWidgets()
+    {
+        artist = findViewById(R.id.editText_searchArtist_main);
+    }
+
     private void searchMusic()
     {
         Retrofit retrofit = new Retrofit.Builder()
@@ -29,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
                 .build();
 
         MusicService service = retrofit.create(MusicService.class);
-        Call<MusicResponse> musicResponseCall = service.searchByArtists("Jonas+Brothers");
+        Call<MusicResponse> musicResponseCall = service.searchByArtists("AJR");
 
         musicResponseCall.enqueue(new Callback<MusicResponse>()
         {
