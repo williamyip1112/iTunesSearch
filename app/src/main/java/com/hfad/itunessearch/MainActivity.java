@@ -1,9 +1,12 @@
 package com.hfad.itunessearch;
 
+import android.content.Intent;
 import android.os.ResultReceiver;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 
 import java.util.List;
@@ -14,49 +17,41 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private EditText artist;
+    private Button search;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        searchMusic();
         wireWidgets();
+        setListeners();
+    }
+
+    private void setListeners()
+    {
+        search.setOnClickListener(this);
     }
 
     private void wireWidgets()
     {
         artist = findViewById(R.id.editText_searchArtist_main);
+        search = findViewById(R.id.button_searchButton_main);
     }
 
-    private void searchMusic()
+    @Override
+    public void onClick(View v)
     {
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(" https://itunes.apple.com")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-
-        MusicService service = retrofit.create(MusicService.class);
-        Call<MusicResponse> musicResponseCall = service.searchByArtists("AJR");
-
-        musicResponseCall.enqueue(new Callback<MusicResponse>()
+        String artistname = artist.getText().toString();
+        switch(v.getId())
         {
-            @Override
-            public void onResponse(Call<MusicResponse> call, Response<MusicResponse> response)
-            {
-                Log.d("ENQUEUE", "onResponse: response" + (response == null));
-                Log.d("ENQUEUE", "onResponse: response body" + (response.body() ==null));
-                List<Music> music = response.body().getResults();
-                Log.d("ENQUEUE", "onResponse:" + music.toString());
-            }
-            @Override
-            public void onFailure(Call<MusicResponse> call, Throwable t)
-            {
-                Log.d("ENQUEUE", "onFailure" + t.getMessage());
-            }
+            case R.id.button_searchButton_main:
 
-        });
+                Intent intentResults = new Intent(MainActivity.this, result.class);
+                intentResults.putExtra("Artist", artistname);
+                startActivity(intentResults);
 
+        }
     }
 }
