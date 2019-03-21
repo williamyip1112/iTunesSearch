@@ -28,7 +28,7 @@ class Music
     @Override
     public String toString()
     {
-        return "Music{" + "artistName=" + artistName + '\'' + ", trackName='" + trackName +'\'';
+        return trackName  + " by " + artistName;
     }
 
 

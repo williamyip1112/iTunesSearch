@@ -6,4 +6,43 @@
     android:layout_height="match_parent"
     tools:context=".result">
 
+    <TextView
+        android:id="@+id/textView_top1song_main"
+        android:layout_width="345dp"
+        android:layout_height="61dp"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="20dp"
+        tools:layout_editor_absoluteY="31dp" />
+
+    <TextView
+        android:id="@+id/textView2_top2song_main"
+        android:layout_width="344dp"
+        android:layout_height="59dp"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="23dp"
+        tools:layout_editor_absoluteY="125dp" />
+
+    <TextView
+        android:id="@+id/textView3_top3song_main"
+        android:layout_width="350dp"
+        android:layout_height="62dp"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="20dp"
+        tools:layout_editor_absoluteY="222dp" />
+
+    <TextView
+        android:id="@+id/textView4_top4song_main"
+        android:layout_width="350dp"
+        android:layout_height="59dp"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="20dp"
+        tools:layout_editor_absoluteY="320dp" />
+
+    <TextView
+        android:id="@+id/textView5_top5song_main"
+        android:layout_width="348dp"
+        android:layout_height="59dp"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="22dp"
+        tools:layout_editor_absoluteY="423dp" />
 </android.support.constraint.ConstraintLayout>

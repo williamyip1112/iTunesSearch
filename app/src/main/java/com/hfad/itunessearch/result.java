@@ -3,6 +3,9 @@ package com.hfad.itunessearch;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
 import java.util.List;
 
@@ -14,13 +17,30 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class result extends AppCompatActivity {
     private String artistname;
+    private TextView top1Song;
+    private TextView top2Song;
+    private TextView top3Song;
+    private TextView top4Song;
+    private TextView top5Song;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
         artistname = getIntent().getStringExtra("Artist");
         searchMusic(artistname);
+        wireWidgets();
     }
+
+    private void wireWidgets()
+    {
+        top1Song = findViewById(R.id.textView_top1song_main);
+        top2Song = findViewById(R.id.textView2_top2song_main);
+        top3Song = findViewById(R.id.textView3_top3song_main);
+        top4Song = findViewById(R.id.textView4_top4song_main);
+        top5Song = findViewById(R.id.textView5_top5song_main);
+    }
+
     private void searchMusic(String artistname)
     {
 
@@ -30,7 +50,7 @@ public class result extends AppCompatActivity {
                 .build();
 
         MusicService service = retrofit.create(MusicService.class);
-        Call<MusicResponse> musicResponseCall = service.searchByArtists(artistname);
+        Call<MusicResponse> musicResponseCall = service.searchByArtists(artistname, 5);
 
         musicResponseCall.enqueue(new Callback<MusicResponse>()
         {
@@ -51,4 +71,5 @@ public class result extends AppCompatActivity {
         });
 
     }
+
 }

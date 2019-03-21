@@ -7,7 +7,7 @@ import retrofit2.http.Query;
 interface MusicService
 {
     @GET("search?")
-    Call<MusicResponse> searchByArtists(@Query("term") String artistName);
+    Call<MusicResponse> searchByArtists(@Query("term") String artistName, @Query("limit") int limitResult );
 
 
 }
