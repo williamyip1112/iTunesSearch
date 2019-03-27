@@ -61,6 +61,12 @@ public class result extends AppCompatActivity {
                 Log.d("ENQUEUE", "onResponse: response body" + (response.body() ==null));
                 List<Music> music = response.body().getResults();
                 Log.d("ENQUEUE", "onResponse:" + music.toString());
+                top1Song.setText("#1 Song: " + music.get(0).getTrackName() + " by " + music.get(0).getArtistname());
+                top2Song.setText("#2 Song: " + music.get(1).getTrackName() + " by " + music.get(1).getArtistname());
+                top3Song.setText("#3 Song: " + music.get(2).getTrackName() + " by " + music.get(2).getArtistname());
+                top4Song.setText("#4 Song: " + music.get(3).getTrackName() + " by " + music.get(3).getArtistname());
+                top5Song.setText("#5 Song: " + music.get(4).getTrackName() + " by " + music.get(4).getArtistname());
+
             }
             @Override
             public void onFailure(Call<MusicResponse> call, Throwable t)

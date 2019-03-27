@@ -9,12 +9,15 @@
     <TextView
         android:id="@+id/textView_top1song_main"
         android:layout_width="345dp"
-        android:layout_height="56dp"
-        android:layout_marginBottom="8dp"
+        android:layout_height="85dp"
+        android:layout_marginBottom="12dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/lustria"
         android:text="TextView"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/textView2_top2song_main"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,49 +25,82 @@
 
     <TextView
         android:id="@+id/textView2_top2song_main"
-        android:layout_width="344dp"
-        android:layout_height="59dp"
-        android:layout_marginBottom="40dp"
+        android:layout_width="345dp"
+        android:layout_height="85dp"
+        android:layout_marginBottom="12dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/lustria"
         android:text="TextView"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/textView3_top3song_main"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_top1song_main" />
 
     <TextView
         android:id="@+id/textView3_top3song_main"
-        android:layout_width="350dp"
-        android:layout_height="61dp"
-        android:layout_marginBottom="36dp"
+        android:layout_width="345dp"
+        android:layout_height="85dp"
+        android:layout_marginBottom="12dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/lustria"
         android:text="TextView"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/textView4_top4song_main"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2_top2song_main" />
 
     <TextView
         android:id="@+id/textView4_top4song_main"
-        android:layout_width="350dp"
-        android:layout_height="59dp"
-        android:layout_marginBottom="36dp"
+        android:layout_width="345dp"
+        android:layout_height="85dp"
+        android:layout_marginBottom="12dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/lustria"
         android:text="TextView"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/textView5_top5song_main"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3_top3song_main" />
 
     <TextView
         android:id="@+id/textView5_top5song_main"
-        android:layout_width="348dp"
-        android:layout_height="59dp"
-        android:layout_marginBottom="40dp"
+        android:layout_width="345dp"
+        android:layout_height="85dp"
+        android:layout_marginBottom="12dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/lustria"
         android:text="TextView"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4_top4song_main" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="42dp"
+        android:layout_height="39dp"
+        android:layout_marginBottom="4dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@mipmap/ic_launcher" />
 </android.support.constraint.ConstraintLayout>
